@@ -7,7 +7,7 @@ const runSequence = require('run-sequence');
 
 gulp.task('webdriver_update',webdriver_update);
 gulp.task('webdriver_standalone',webdriver_update);
-gulp.task('e2e', ['webdriver_update','webdriver_standalone'],function () {
+gulp.task('protractor', ['webdriver_update','webdriver_standalone'],function () {
     log('end to end test started ...');
     gulp.src('./specs/**/*.js')
         .pipe(protractor({

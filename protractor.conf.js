@@ -38,6 +38,8 @@ exports.config = {
   // multiCapabilities: [
   //   {
   //     'browserName': 'chrome',
+  //      shardTestFiles: true
+  //      'maxInstances': 2,
   //   }, {
   //     'browserName': 'firefox',
   //   }
@@ -48,8 +50,11 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    isVerbose: true,
-    includeStackTrace: true
+    // Jasmine 2.xx  no longer support options isVerbose and includeStackTrace
+    // isVerbose: true,
+    // includeStackTrace: true,
+    grep: 'pattern',
+    invertGrep: false
   },
 
   beforeLaunch: function () {
